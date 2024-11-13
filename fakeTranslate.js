@@ -1,4 +1,3 @@
-// Объект dictionary для хранения переводов
 const dictionary = {
     "hello": "здравствуйте",
     "world": "мир",
@@ -29,11 +28,11 @@ function fakeTranslate(word) {
         setTimeout(() => {
             const translation = dictionary[word.toLowerCase()];
             if (translation) {
-                resolve(translation);  // Перевод найден
+                resolve(translation); 
             } else {
-                reject("Слово не найдено в словаре");  // Перевод не найден
+                reject("Слово не найдено в словаре");  
             }
-        }, 1000);  // Задержка 1 секунда
+        }, 1000); 
     });
 }
 
