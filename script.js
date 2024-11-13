@@ -1,13 +1,13 @@
 let favorites = [];
 
-// Функция для перевода слова
+// Функция для перевода слова с использованием fakeTranslate
 async function translateWord() {
-    const word = document.getElementById("wordInput").value.trim();  // Получаем слово из поля ввода
+    const word = document.getElementById("wordInput").value.trim();
     if (!word) {
         alert("Введите слово для перевода.");
         return;
     }
-    
+
     try {
         // Используем fakeTranslate для получения перевода
         const translation = await fakeTranslate(word);
@@ -58,12 +58,11 @@ function updateFavorites() {
 
 // Удаление перевода из избранного
 function removeFavorite(index) {
-    favorites.splice(index, 1); // Удаляем элемент из массива
-    updateFavorites(); // Обновляем список
+    favorites.splice(index, 1);  // Удаляем элемент из списка избранного
+    updateFavorites();
     alert("Перевод удален из избранного.");
 }
 
 // Добавление обработчиков событий
 document.getElementById("translateButton").addEventListener("click", translateWord);
 document.getElementById("saveButton").addEventListener("click", saveTranslation);
-
