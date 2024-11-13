@@ -1,6 +1,6 @@
 let favorites = [];
 
-// Функция для перевода слова с использованием fakeTranslate
+
 async function translateWord() {
     const word = document.getElementById("wordInput").value.trim();
     if (!word) {
@@ -9,18 +9,18 @@ async function translateWord() {
     }
 
     try {
-        // Используем fakeTranslate для получения перевода
+        
         const translation = await fakeTranslate(word);
-        document.getElementById("translationResult").innerText = translation; // Отображаем перевод
+        document.getElementById("translationResult").innerText = translation; 
 
-        // Разблокируем кнопку "Сохранить в избранное"
+        
         document.getElementById("saveButton").disabled = false;
     } catch (error) {
-        document.getElementById("translationResult").innerText = error; // Показываем ошибку, если слово не найдено
+        document.getElementById("translationResult").innerText = error; 
     }
 }
 
-// Сохранение перевода в избранное
+
 function saveTranslation() {
     const word = document.getElementById("wordInput").value.trim();
     const translation = document.getElementById("translationResult").innerText;
@@ -32,10 +32,10 @@ function saveTranslation() {
     alert(`Сохранено: ${word} - ${translation}`);
 }
 
-// Обновление списка избранного
+
 function updateFavorites() {
     const favoritesList = document.getElementById("favoritesList");
-    favoritesList.innerHTML = ""; // Очистить список
+    favoritesList.innerHTML = ""; 
 
     if (favorites.length === 0) {
         const message = document.createElement("li");
@@ -56,9 +56,9 @@ function updateFavorites() {
     }
 }
 
-// Удаление перевода из избранного
+
 function removeFavorite(index) {
-    favorites.splice(index, 1);  // Удаляем элемент из списка избранного
+    favorites.splice(index, 1); 
     updateFavorites();
     alert("Перевод удален из избранного.");
 }
