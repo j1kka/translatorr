@@ -1,3 +1,5 @@
+import { fakeTranslate } from './fakeTranslate.js';
+ 
 let favorites = [];
 
 
